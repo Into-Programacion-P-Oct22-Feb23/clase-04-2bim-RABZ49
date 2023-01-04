@@ -5,27 +5,35 @@
  */
 package ejemplos01;
 
+import java.util.Scanner;
+
 /**
  *
  * @author reroes
  */
-public class Ejemplo08 {
+public class Ejemplo081 {
 
     public static void main(String[] args) {
         // 
+        Scanner entrada = new Scanner(System.in);
+        
         String mensajeSuma;
         String mensajeSumaDos;
-       
-        mensajeSuma = obtenerTablaSumar(10, 9); // se invoca al método 
-                                                       // obtenerTablaSumar
-                                                       // y el valor que 
-                                                       // devuelve se lo 
-                                                       // almacena  en mensajeSuma
-        
-        mensajeSumaDos = obtenerTablaMultiplicar(10, 9);
-        
+        int opcion = 0 ;
+        System.out.printf("Si desea sumar ingrese 1 \n"
+                + "si desea multiplicar ingrese 2 \n  ");
+        opcion = entrada.nextInt();
+        if (opcion == 1){
+        mensajeSuma = obtenerTablaSumar(10, 9);
         System.out.printf("%s\n", mensajeSuma);
+        
+        }else if (opcion==2){
+        mensajeSumaDos = obtenerTablaMultiplicar(10, 9);
         System.out.printf("%s\n", mensajeSumaDos);
+    }else if (opcion >= 3){
+            System.out.println("Parametro fuera del rango");
+    
+    }
     }
         
     public static String obtenerTablaSumar(int limite, int tabla){
@@ -38,7 +46,7 @@ public class Ejemplo08 {
         }
         return cadena;        
     }
-    
+    //Roberto Bustamante
     public static String obtenerTablaMultiplicar(int limite, int tabla){
         int operacion;
         String cadena = "";
